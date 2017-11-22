@@ -17,7 +17,7 @@ public class ArticleServiceImplTest {
      ArticleService articleService;
 
     @Test
-    public void wrtieArticle() {
+    public void 글작성() {
         //given
         ArticleDto dto = new ArticleDto("1", "1");
 

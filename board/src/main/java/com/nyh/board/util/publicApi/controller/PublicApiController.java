@@ -12,7 +12,7 @@ import org.springframework.web.client.RestTemplate;
 
 import java.io.IOException;
 
-@RestController(value = "/interface")
+@RestController
 public class PublicApiController {
 
     @Autowired
