@@ -1,6 +1,6 @@
 <template>
   <div class="hello" >
-    <button v-on:click="pageInit()">페이지 로딩</button>
+    <button v-on:click="allSearch()">전체 검색</button>
 
     <table>
       <tbody>
@@ -23,8 +23,8 @@
       };
     },
     methods: {
-      pageInit() {
-        const goostoreUrl = 'http://localhost:8080/goodStores';
+      allSearch() {
+        const goostoreUrl = 'http://localhost:8080/api/stores';
         this.$http.get(goostoreUrl).then((result) => {
           this.stores = result.data;
           console.log(result.data);
