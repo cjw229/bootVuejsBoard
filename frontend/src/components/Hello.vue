@@ -24,10 +24,8 @@
     },
     methods: {
       allSearch() {
-        const goostoreUrl = 'http://localhost:8080/api/stores';
-        this.$http.get(goostoreUrl).then((result) => {
+        this.$http.get().then((result) => {
           this.stores = result.data;
-          console.log(result.data);
         });
       },
     },

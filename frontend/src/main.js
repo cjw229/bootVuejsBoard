@@ -10,8 +10,12 @@ Vue.config.productionTip = false;
 
 axios.defaults.headers.common['Access-Control-Allow-Origin'] = 'http://localhost:8080';
 axios.defaults.headers.common['Access-Control-Request-Method'] = '*';
+axios.defaults.baseURL = process.env.API_HOST;
+
+console.log(axios.defaults.baseURL);
 
 Vue.use(vueAxios, axios);
+
 
 /* eslint-disable no-new */
 new Vue({
