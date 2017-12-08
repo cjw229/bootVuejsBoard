@@ -8,6 +8,8 @@
     "dev": "node build/dev-server.js",
     "start": "npm run dev",
     "build": "node build/build.js",
+    "build:dev": "NODE_ENV=development npm run build",
+    "build:prd": "NODE_ENV=production npm run build",
     "unit": "cross-env BABEL_ENV=test karma start test/unit/karma.conf.js --single-run",
     "e2e": "node test/e2e/runner.js",
     "test": "npm run unit && npm run e2e",
@@ -17,8 +19,7 @@
     "axios": "^0.17.0",
     "vue": "^2.4.2",
     "vue-axios": "^2.0.2",
-    "vue-router": "^2.7.0",
-    "chalk": "^0.5.1"
+    "vue-router": "^2.7.0"
   },
   "devDependencies": {
     "autoprefixer": "^7.1.2",
