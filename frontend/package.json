@@ -16,6 +16,10 @@
     "lint": "eslint --ext .js,.vue src test/unit/specs test/e2e/specs"
   },
   "dependencies": {
+    "bootstrap": "4.0.0-beta.2",
+    "bootstrap-vue": "1.1.0",
+    "font-awesome": "^4.7.0",
+    "simple-line-icons": "^2.4.1",
     "axios": "^0.17.0",
     "vue": "^2.4.2",
     "vue-axios": "^2.0.2",
@@ -84,7 +88,9 @@
     "webpack": "^2.6.1",
     "webpack-dev-middleware": "^1.10.0",
     "webpack-hot-middleware": "^2.18.0",
-    "webpack-merge": "^4.1.0"
+    "webpack-merge": "^4.1.0",
+    "node-sass": "4.7.1",
+    "sass-loader": "6.0.6"
   },
   "engines": {
     "node": ">= 4.0.0",
