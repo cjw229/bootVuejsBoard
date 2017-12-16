@@ -38,19 +38,17 @@ public class PublicApiController {
 
             RestTemplate restTemplate = new RestTemplate();
             String result = restTemplate.getForObject(apiUrl, String.class);
-            System.out.println(result);
 
-            ApiResult apiResult = objectMapper.readValue(result, ApiWrapper.class).getApiResult();
+            if (result.contains("INFO-000")) {
 
-            if ("INFO-000".equals(apiResult.getResult().get("CODE"))) {
+                ApiResult apiResult = objectMapper.readValue(result, ApiWrapper.class).getApiResult();
+
                 apiLast = "/" + apiResult.getTotCount();
                 apiUrl = apiDefaultUrl + apiFirst + apiLast;
                 result = restTemplate.getForObject(apiUrl, String.class);
                 ApiResult allApiData = objectMapper.readValue(result, ApiWrapper.class).getApiResult();
 
                 storeRepository.saveAll(allApiData.getStoreList());
-                storeRepository.flush();
-
             }
         }
 
