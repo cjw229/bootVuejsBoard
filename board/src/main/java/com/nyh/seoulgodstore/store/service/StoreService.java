@@ -1,20 +1,10 @@
 package com.nyh.seoulgodstore.store.service;
 
 import com.nyh.seoulgodstore.store.model.Store;
-import com.nyh.seoulgodstore.store.repository.StoreRepository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
+import com.nyh.seoulgodstore.store.model.StoreRequest;
+import org.springframework.data.domain.Page;
+import org.springframework.data.domain.PageRequest;
 
-import java.util.List;
-
-@Service
-public class StoreService {
-
-    @Autowired
-    StoreRepository storeRepository;
-
-    public List<Store> getStores(){
-        return storeRepository.findAll();
-    }
-
+public interface StoreService {
+    public Page<Store> getStores(StoreRequest storeRequest);
 }
