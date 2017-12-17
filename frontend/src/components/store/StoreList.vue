@@ -16,6 +16,9 @@
 
     <b-card :header="caption">
       <b-table :hover="hover" :striped="striped" :bordered="bordered" :small="small" :fixed="fixed" class="table-responsive-sm" :items="stores" :fields="fields" :per-page="perPage">
+        <template slot="SH_NAME" scope="data">
+          <router-link :to="{ name: 'store', params: { storeId: data.item.SH_ID }}">{{data.item.SH_NAME}}</router-link>
+        </template>
         <template slot="SH_PHOTO" scope="data">
           <b-img :src="data.item.SH_PHOTO" fluid alt="Responsive image" />
         </template>

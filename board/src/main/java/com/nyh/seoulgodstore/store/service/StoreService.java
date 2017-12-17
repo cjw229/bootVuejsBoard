@@ -7,4 +7,6 @@ import org.springframework.data.domain.PageRequest;
 
 public interface StoreService {
     public Page<Store> getStores(StoreRequest storeRequest);
+
+    public Store getStore(int storeId);
 }

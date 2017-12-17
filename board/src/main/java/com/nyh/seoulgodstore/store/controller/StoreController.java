@@ -21,14 +21,19 @@ public class StoreController {
     @Autowired
     StoreService storeService;
 
+    @GetMapping("/api/storeType")
+    public List<Map> getStoreType(){
+        return StoreType.toArrayList();
+    }
+
     @GetMapping("/api/stores/{storeType}/{page}/{size}")
     public Page<Store> getStoreList(@PathVariable String storeType, @PathVariable int page,@PathVariable int size ){
         return storeService.getStores(new StoreRequest(storeType, page, size));
     }
 
-    @GetMapping("/api/storeType")
-    public List<Map> getStoreType(){
-        return StoreType.toArrayList();
+    @GetMapping("/api/store/{storeId}")
+    public Store getStore(@PathVariable int storeId){
+        return storeService.getStore(storeId);
     }
 
 }

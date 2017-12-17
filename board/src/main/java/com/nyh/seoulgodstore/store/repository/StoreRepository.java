@@ -6,5 +6,8 @@ import org.springframework.data.domain.Pageable;
 import org.springframework.data.repository.PagingAndSortingRepository;
 
 public interface StoreRepository extends PagingAndSortingRepository<Store, Long> {
+
     public Page<Store> findByIndutyCodeSe(String storeType, Pageable pageable);
+
+    public Store findById(int id);
 }

@@ -5,7 +5,6 @@ import com.nyh.seoulgodstore.store.model.StoreRequest;
 import com.nyh.seoulgodstore.store.repository.StoreRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Page;
-import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -21,7 +20,10 @@ public class StoreServiceImpl implements StoreService {
         }else{
             return storeRepository.findByIndutyCodeSe(request.getStoreType(), request.getPageRequest());
         }
-
     }
 
+    @Override
+    public Store getStore(int storeId) {
+        return storeRepository.findById(storeId);
+    }
 }
